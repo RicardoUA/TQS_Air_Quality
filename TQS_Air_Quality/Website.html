@@ -1,0 +1,27 @@
+<!DOCTYPE>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>TQS Air Quality Index</title>
+</head>
+
+<body background="background.jpg">
+<p style="color:white">TQS Air Quality Index</p>
+<form id="form1" name="form1" method="post" action="http://192.168.2.7/iot/geral.php">
+  <p>
+    <label style="color:white" for="City">City:</label>
+    <input style="color:black" type="text" name="city" id="city" width="500"/>
+  </p>
+  <p>
+    <input type="submit" name="enviarButton" id="enviarButton" value="Enviar" onClick="findCity()"/>
+  </p>
+</form>
+</body>
+
+<script>
+		function findCity() {
+			window.open("http://localhost:8080/api/aqi/"+document.getElementById("city").value);
+		}
+
+</script>
+</html>
